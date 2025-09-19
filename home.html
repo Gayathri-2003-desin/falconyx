@@ -11,19 +11,34 @@
 </head>
 <body>
     <div class="wrapper">
-        <nav>
-    <div class="header">
-    <div class="left-head">
-   <img class="fal-logo" src="images/fal-logo.png">
-    </div>
-    <div class="right-head">
-    <a href="#home-s">Home</a>
-    <a href="#about-s">About Us</a>
-    <a href="#services-s">Services</a>
-    <a href="#contact-s">Contact</a>
-    </div>
-    </div>
+         <header>
+    <nav class="navbar" aria-label="Primary navigation">
+     <img class="fal-logo" src="images/fal-logo.png">
+
+      <div class="icons">
+      <button id="menu-btn" class="icon-btn" aria-label="Open menu" aria-expanded="false">
+        &#9776;
+      </button>
+
+      
+      <button id="close-btn" class="icon-btn" aria-label="Close menu" hidden>
+        <!-- &times; -->
+      </button>
+</div>
+      
+      <ul id="nav" class="nav-links" role="menu" aria-hidden="true">
+        <li role="none"><a role="menuitem" href="#home-s">Home</a></li>
+        <li role="none"><a role="menuitem" href="#about-s">About Us</a></li>
+        <li role="none"><a role="menuitem" href="#services-s">Services</a></li>
+        <li role="none"><a role="menuitem" href="#contact-s">Contact</a></li>
+      </ul>
     </nav>
+  </header>
+
+  
+  <div id="nav-overlay" class="nav-overlay" hidden></div>
+
+
     <section id="home-s">
     <div class="landing">
         <div class="main-pic">
@@ -468,5 +483,7 @@
     </div>
     </footer>
     </div>
+      <script src="menu.js"></script>
+
 </body>
 </html>
