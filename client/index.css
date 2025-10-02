@@ -1299,6 +1299,7 @@ aspect-ratio: 201/137; */
 .marquee-inner {
   display: inline-flex;
   animation: scroll-seamless 60s linear infinite;
+  will-change: transform;
 }
 
 .marquee-inner img {
