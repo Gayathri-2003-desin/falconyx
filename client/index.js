@@ -163,3 +163,73 @@ function showToast(message, isError = false) {
       alert('Error sending form data');
     }
   });
+
+
+
+
+  // List of logo images
+const logos = [
+  "images/voltex.jpg",
+  "images/ledvance.png",
+  "images/map.jpg",
+  "images/jotun.jpg",
+  "images/rexton.jpg",
+  "images/belden.png",
+  "images/decoduct.jpg",
+  "images/osram.png",
+  "images/fischer.png",
+  "images/forsroc.png",
+  "images/philips.png",
+  "images/abb.png",
+  "images/mk-logo.png",
+  "images/hp-logo.png",
+  "images/lenovo.png",
+  "images/apple.jpeg",
+  "images/dell-logo.png",
+  "images/seagate.png",
+  "images/sandisk.jpg",
+  "images/asus.jpg",
+  "images/wd-logo.jpg",
+  "images/dahua.png",
+  "images/hikvision.jpg",
+  "images/d-link.png",
+  "images/tp-link.jpg",
+  "images/unv-logo.png"
+];
+
+// Select container
+const marquee = document.querySelector('.marquee');
+
+// Create inner wrapper dynamically
+const inner = document.createElement('div');
+inner.className = 'marquee-inner';
+
+// Add all logos dynamically
+logos.forEach(src => {
+  const img = document.createElement('img');
+  img.src = src;
+  img.alt = src.split('/').pop().split('.')[0];
+  img.loading = 'lazy';
+  inner.appendChild(img);
+});
+
+// Duplicate the logos for seamless effect
+inner.innerHTML += inner.innerHTML;
+
+// Add the inner div to marquee
+marquee.appendChild(inner);
+
+// Animate marquee
+let scrollX = 0;
+const speed = 1.5; // Adjust speed
+
+function animateMarquee() {
+  scrollX -= speed;
+  if (Math.abs(scrollX) >= inner.scrollWidth / 2) {
+    scrollX = 0; // Reset for seamless loop
+  }
+  inner.style.transform = `translateX(${scrollX}px)`;
+  requestAnimationFrame(animateMarquee);
+}
+
+animateMarquee();
